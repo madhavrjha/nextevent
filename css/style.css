@@ -1,0 +1,262 @@
+/*
+
+==================================
+==================================
+    global
+==================================
+==================================
+
+*/
+
+:root {
+  --theme-color: #28a55f;
+  --theme-color-hover: #4fda8c;
+  /* --theme-color: #f1c40f; */
+  /* --theme-color-hover: #f39c12; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f2f2;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+}
+
+i {
+  margin-right: 5px;
+}
+
+/*
+
+==================================
+==================================
+    Utility Classes
+==================================
+==================================
+
+*/
+
+.form-error {
+  color: var(--bs-red);
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0.2rem 0 0 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Avatar */
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Comment Box */
+
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.comment-box span {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.comment-box p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Tab Header */
+
+.tab-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tab-header div {
+  cursor: pointer;
+  padding: 0.8rem;
+  background-color: #e6e7e8;
+  color: var(--theme-color);
+}
+
+.tab-header .active {
+  background-color: #fff;
+  cursor: auto;
+}
+
+.tab-content {
+  padding: 2rem 1rem;
+}
+
+/*
+
+==================================
+==================================
+    index.html#login
+==================================
+==================================
+
+*/
+
+#login {
+  width: 100%;
+}
+
+#login .login-box {
+  background-color: #fff;
+  width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 0 30px 5px #ccc;
+}
+
+@media (max-width: 576px) {
+  #login .login-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 336px) {
+  #login .login-box {
+    width: 100%;
+  }
+}
+
+#login .tab-header {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#login .btn {
+  text-transform: uppercase;
+  display: block;
+  width: auto;
+  margin: auto;
+  background-color: var(--theme-color);
+  border: 1px solid var(--theme-color);
+}
+
+#login .btn:hover {
+  background-color: var(--theme-color-hover);
+  box-shadow: 10px 10px 20px #ccc;
+}
+
+#login label {
+  color: var(--theme-color);
+}
+
+#login .form-control {
+  border-color: var(--theme-color);
+}
+/*
+
+==================================
+==================================
+    event.html#event
+==================================
+==================================
+
+*/
+
+#event {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+#event .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+#event .tab-content {
+  padding: 1rem;
+}
+
+#event .stream-title {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+#event .stream-title p {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+#event .stream-video video {
+  width: 100%;
+}
+
+#event .communicate {
+  border: 1px solid red;
+  position: relative;
+  background-color: #fff;
+}
+
+#event .stream-action {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.tab-content#chat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+#event .chat-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: stretch;
+}
+
+#event .chat-form input {
+  width: 60%;
+  border: 2px solid var(--theme-color);
+  border-right: 0;
+  outline: 0;
+  border-radius: 10px 0 0 10px;
+  padding: 0.3rem 0.5rem;
+}
+
+#event .chat-form button {
+  flex: 1;
+  border: 2px solid var(--theme-color);
+  border-left: 0;
+  border-radius: 0;
+  background-color: var(--theme-color);
+  border-radius: 0 10px 10px 0;
+  outline: none;
+}
+
+#event .comments {
+  overflow-y: auto;
+}

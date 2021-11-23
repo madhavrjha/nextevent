@@ -357,3 +357,43 @@ i {
     width: 80%;
   }
 }
+
+@media (max-width: 992px) {
+  #chat-content .comments {
+    height: 520px;
+  }
+
+  #event .chat-form input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  #chat-content .comments {
+    height: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  #event .tab-header span {
+    display: none;
+  }
+
+  #chat-content .comments {
+    height: 480px;
+    margin-bottom: 3rem;
+  }
+
+  #event .chat-form input {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  #event .chat-form button {
+    display: none;
+  }
+
+  #audience-content .audiences {
+    grid-template-columns: 1fr;
+  }
+}

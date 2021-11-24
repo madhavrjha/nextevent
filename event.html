@@ -6,14 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
   <link rel="stylesheet" href="./css/style.css">
+  <style>
+    body {
+      background-color: #fefefe;
+    }
+  </style>
   <title>Event Title | NextEvent</title>
 </head>
 
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="./img/brand.png" alt="brand"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item px-md-3">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item px-md-3">
+            <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-address-card"></i> About</a>
+          </li>
+          <li class="nav-item px-md-3">
+            <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-gear"></i> Services</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa-solid fa-circle-user"></i> John
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-id-badge"></i> Profile</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 
   <section id="event">
     <div class="container">
@@ -101,11 +142,11 @@
             </div>
 
           </div>
-          <div class="chat-form">
+          <form class="chat-form" id="chat-form">
             <img src="./img/avatar.jpg" class="img-fluid avatar" alt="avatar">
             <input type="text" placeholder="chat as john_doe">
-            <button class="btn btn-dark btn-small"><i class="fa-solid fa-comment"></i> Chat</button>
-          </div>
+            <!-- <button type='submit' class="btn btn-dark btn-small"><i class="fa-solid fa-comment"></i> Chat</button> -->
+          </form>
         </div>
         <div class="tab-content hidden" id="audience-content">
           <div class="audiences">
@@ -231,17 +272,23 @@
     </div>
   </section>
 
+
+  <footer>
+    <p>All right Reserved, copyright &copy; 2021, NextEvent</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  /*
-  
-  ==================================
-  ==================================
-        event.html
-        Toggle Tab
-  ==================================
-  ==================================
-  
-  */
+    /*
+    
+    ==================================
+    ==================================
+          event.html
+          Toggle Tab
+    ==================================
+    ==================================
+    
+    */
 
     const chatTabBtn = document.querySelector('#event .communicate .tab-header div:nth-child(1)');
     const audienceTabBtn = document.querySelector('#event .communicate .tab-header div:nth-child(2)');
@@ -280,17 +327,49 @@
       speakersTab.classList.remove('hidden');
     });
 
-      /*
+    /*
+  
+    ==================================
+    ==================================
+          event.html
+          Chat Send
+    ==================================
+    ==================================
     
-      ==================================
-      ==================================
-            event.html
-            Chat Send
-      ==================================
-      ==================================
-      
-      */
+    */
 
+    const chatForm = document.querySelector('#chat-form');
+    const chatSubmitBtn = document.querySelector('#chat-form button');
+    const chatInputBox = document.querySelector('#chat-form input');
+    const commentSection = document.querySelector('#event .comments');
+
+    chatForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const message = chatInputBox.value.trim();
+      if (message !== '') {
+        commentSection.innerHTML += `
+      <div class="comment-box" >
+        <img src="./img/avatar.jpg" alt="user-image" class="img-fluid avatar">
+          <p>
+              <span>User Name</span>
+               ${chatInputBox.value}
+          </p>
+      </div>`
+        chatInputBox.value = '';
+
+        commentSection.scrollTop = commentSection.scrollHeight;
+      }
+    })
+
+    // < div class="comment-box" >
+    //       <img src="./img/avatar-6.png" alt="avatar" class="img-fluid avatar">
+    //         <p>
+    //           <span>Maria Hernandez</span>
+    //           f you look at what you have in life, you'll always have more. If you look at what you don't have in
+    //           life, you'll never
+    //           have enough.
+    //         </p>
+    //       </div>
 
 
 

@@ -9,10 +9,19 @@
 */
 
 :root {
-  --theme-color: #28a55f;
-  --theme-color-hover: #4fda8c;
+  /* Green Theme */
+
+  /* --theme-color: #28a55f; */
+  /* --theme-color-hover: #4fda8c; */
+
+  /* Yellow Theme */
+
   /* --theme-color: #f1c40f; */
   /* --theme-color-hover: #f39c12; */
+
+  /* Grey */
+  --theme-color: #95a5a6;
+  --theme-color-hover: #7f8c8d;
 }
 
 ::-webkit-scrollbar {
@@ -52,6 +61,33 @@ body {
 
 i {
   margin-right: 5px;
+}
+
+/*
+
+==================================
+==================================
+    Header
+==================================
+==================================
+
+*/
+
+#header {
+  background-color: var(--theme-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#header .navbar-nav .nav-link.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#header a.navbar-brand img {
+  height: 40px;
+}
+
+#header .nav-link.dropdown-toggle {
+  font-size: 1rem;
 }
 
 /*
@@ -221,6 +257,10 @@ i {
 
 /* .stream */
 
+#event .stream {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 #event .stream-title {
   display: flex;
   align-items: center;
@@ -248,6 +288,7 @@ i {
   position: relative;
   background-color: #fff;
   overflow: hidden;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Chat Content */
@@ -271,15 +312,14 @@ i {
 }
 
 #event .chat-form input {
-  width: 60%;
+  width: 100%;
   border: 2px solid var(--theme-color);
-  border-right: 0;
   outline: 0;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   padding: 0.3rem 0.5rem;
 }
 
-#event .chat-form button {
+/* #event .chat-form button {
   flex: 1;
   border: 2px solid var(--theme-color);
   border-radius: 0;
@@ -287,7 +327,7 @@ i {
   color: var(--theme-color);
   border-radius: 0 10px 10px 0;
   outline: none;
-}
+} */
 
 /* Audience Content, Speakers Content */
 
@@ -345,7 +385,8 @@ i {
   }
 
   #chat-content .comments {
-    height: 480px;
+    height: 400px;
+    margin-bottom: 3rem;
   }
 
   #audience-content,
@@ -396,4 +437,21 @@ i {
   #audience-content .audiences {
     grid-template-columns: 1fr;
   }
+}
+
+/*
+
+==================================
+==================================
+    footer
+==================================
+==================================
+
+*/
+
+footer {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
 }

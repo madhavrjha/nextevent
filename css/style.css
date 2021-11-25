@@ -27,18 +27,17 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-  display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f9f9f9;
+  background: #fff;
   border-radius: 20px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--theme-color);
+  background: rgb(238, 238, 238);
   border-radius: 10px;
   opacity: 0.6;
 }
@@ -289,48 +288,50 @@ i {
 #event .communicate {
   position: relative;
   background-color: #fff;
-  overflow: hidden;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Chat Content */
 
-#chat-content .comments {
-  height: 480px;
-  overflow-y: auto;
+#chat-content::-webkit-scrollbar {
+  width: 5px;
+  display: none;
 }
 
+#chat-content .comments {
+  height: 490px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#chat-content {
+  padding-bottom: 3px;
+}
+
+/* Chat Form */
 #event .chat-form {
   width: 100%;
-  padding: 0.5rem 1.5rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  box-sizing: border-box;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  height: 40px;
   display: flex;
-  align-items: stretch;
-  background-color: var(--theme-color);
+  align-items: stretch !important;
 }
 
-#event .chat-form input {
-  width: 100%;
-  border: 2px solid var(--theme-color);
-  outline: 0;
-  border-radius: 10px;
-  padding: 0.3rem 0.5rem;
+#event .chat-form p {
+  flex: 7;
+  line-height: 25px;
 }
 
-/* #event .chat-form button {
+#event .chat-form button {
   flex: 1;
-  border: 2px solid var(--theme-color);
+  height: 40px;
+  margin-top: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: transparent;
   color: var(--theme-color);
-  border-radius: 0 10px 10px 0;
-  outline: none;
-} */
-
+  border: 1px solid #ccc;
+  border-left: 0;
+}
 /* Audience Content, Speakers Content */
 
 #audience-content,
@@ -388,26 +389,17 @@ i {
 
   #chat-content .comments {
     height: 400px;
-    margin-bottom: 3rem;
   }
 
   #audience-content,
   #speakers-content {
     height: 530px;
   }
-
-  #event .chat-form input {
-    width: 100%;
-  }
 }
 
 @media (max-width: 992px) {
   #chat-content .comments {
     height: 520px;
-  }
-
-  #event .chat-form input {
-    width: 100%;
   }
 }
 
@@ -424,16 +416,6 @@ i {
 
   #chat-content .comments {
     height: 480px;
-    margin-bottom: 3rem;
-  }
-
-  #event .chat-form input {
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  #event .chat-form button {
-    display: none;
   }
 
   #audience-content .audiences {

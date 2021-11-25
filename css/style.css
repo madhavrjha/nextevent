@@ -397,7 +397,7 @@ i {
   }
 
   #event .chat-form input {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -407,7 +407,7 @@ i {
   }
 
   #event .chat-form input {
-    width: 70%;
+    width: 100%;
   }
 }
 
